@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
 
-  root to: 'wellcome#index'
+  root to: 'api/v1/user/stumblings#index' #home画面変更
+  namespace :api do
+    namespace :v1 do
+      namespace :user do
+        get 'stumblings/searching', to: 'stumblings#searching'
+        resources :stumblings, only: [:index, :create, :edit, :show, :update]
+
+      end
+      # resource :user do
+      #   resources :stumblings, only: [:index, :create, :edit, :show, :update]
+      #     get 'stumblings/searching', to: 'stumblings#searching'
+      #   end
+    end
+  end
 end
+
+=begin
+
+
+
+=end
