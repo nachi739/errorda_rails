@@ -1,16 +1,15 @@
-<!DOCTYPE html>
+<h1>Stumblings#index</h1>
+<% @stumblings.each do |stumbling| %>
+    <div>
+    <%= stumbling.search_key %>
+        <p><%= stumbling.end_time %></p>
+        <p><%= stumbling.dictiorary_key %></p>
+    <%= link_to "編集", edit_api_v1_user_stumbling_path(stumbling) %>
 
-<head>
-    <meta charset="utf-8">
-    <link rel="sytlesheet" href="">
-</head>
 
-<body>
-
-<%= @stumblings.each do |stumbling| %>
-    <%= stumbling.search_key %><br>
+    </div>
 <% end %>
 
-</body>
 
-</html>
+
+

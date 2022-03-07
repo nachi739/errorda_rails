@@ -5,9 +5,11 @@ Rails.application.routes.draw do
     namespace :v1 do
       namespace :user do
         get 'stumblings/searching', to: 'stumblings#searching'
-        resources :stumblings, only: [:index, :create, :edit, :show, :update]
+        get 'stumblings/:id', to: 'stumblings#end_time',as: :stumblings
+        resources :stumblings, only: [:index, :create, :edit, :update, :show]
 
       end
+
       # resource :user do
       #   resources :stumblings, only: [:index, :create, :edit, :show, :update]
       #     get 'stumblings/searching', to: 'stumblings#searching'
