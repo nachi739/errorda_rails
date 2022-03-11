@@ -2,8 +2,8 @@
 <% @stumblings.each do |stumbling| %>
     <div>
     <%= stumbling.search_key %>
-        <p><%= stumbling.end_time %></p>
         <p><%= stumbling.dictiorary_key %></p>
+        <p><%= stumbling.end_time %></p>
     <%= link_to "編集", edit_api_v1_user_stumbling_path(stumbling) %>
 
 

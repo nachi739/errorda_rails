@@ -22,14 +22,15 @@ class Api::V1::User::StumblingsController < ApplicationController
     def end_time
         @stu = Stumbling.find_by(id: params[:id])
         @stu.end_time =  Time.now
+        @stu.dictiorary_key = "本タイトルを入力してください"
         @stu.save
-    render json: {get:"end"}
+        redirect_to '/'
     end
     def show
     end
     def update
         p params #postで投げられた値を更新する
-        @stu.update
+
         @stumbling = Stumbling.find_by(id: params[:id])
         @stumbling.update(update_params)
         redirect_to '/'
